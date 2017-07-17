@@ -8,6 +8,8 @@ const walletsRoutes = require('./app/routes/wallets');
 const cashFlowRoutes = require('./app/routes/cash-flows');
 
 
+app.use(bodyParser.json());
+
 const port = process.env.PORT || 8080;
 
 

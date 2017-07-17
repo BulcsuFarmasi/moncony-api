@@ -1,3 +1,4 @@
-/**
- * Created by Dell on 2017. 07. 17..
- */
+const express = require('express');
+const router = express.Router();
+
+module.exports = router;
