@@ -30,5 +30,19 @@ router.route('/:id')
             res.json(wallet);
         })
     })
+    .put((req, res) => {
+        Wallet.findById(req.params.id, (err, wallet) => {
+            if (err) {
+                res.send(err);
+            }
+            wallet.name = req.body.name;
+            console.log(req.body.amount);
+            wallet.currentAmount = wallet.currentAmount + req.body.amount;
+
+            wallet.save((err) => {
+                res.send(err);
+            })
+        })
+    })
 
 module.exports = router;
