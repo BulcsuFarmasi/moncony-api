@@ -2,8 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const CashFlowSchema = new Schema({
-    name: String,
-    currentValue: Number,
+    walletId: Schema.ObjectId,
+    amount: Number,
+    text: String,
     date: Date
 })
 
