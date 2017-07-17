@@ -44,5 +44,14 @@ router.route('/:id')
             })
         })
     })
+    .delete((req, res) => {
+        Wallet.remove({
+            _id: req.params.id
+        }, (err, wallet) => {
+            if (err) {
+                res.send(err);
+            }
+        })
+    })
 
 module.exports = router;
