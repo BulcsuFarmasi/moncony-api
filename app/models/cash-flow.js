@@ -8,7 +8,7 @@ const CashFlowSchema = new Schema({
     date: Date
 })
 
-WalletSchema.set('toJSON', {
+CashFlowSchema.set('toJSON', {
     versionKey: false,
     transform:(doc, ret) => {ret.id = doc._id; delete ret._id}
 })
