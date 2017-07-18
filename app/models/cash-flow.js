@@ -8,4 +8,9 @@ const CashFlowSchema = new Schema({
     date: Date
 })
 
+WalletSchema.set('toJSON', {
+    versionKey: false,
+    transform:(doc, ret) => {ret.id = doc._id; delete ret._id}
+})
+
 module.exports = mongoose.model('CashFlow', CashFlowSchema);
