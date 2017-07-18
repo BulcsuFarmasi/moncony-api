@@ -12,6 +12,12 @@ app.use(bodyParser.json());
 
 const port = process.env.PORT || 8080;
 
+app.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE');
+    next();
+});
+
 
 app.use('/api/wallets', walletsRoutes);
 app.use('/api/cashFlows', cashFlowRoutes);

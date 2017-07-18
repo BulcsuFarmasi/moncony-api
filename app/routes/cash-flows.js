@@ -4,7 +4,6 @@ const CashFlow = require('../models/cash-flow');
 
 router.route('/:walletId')
     .post((req, res) => {
-        console.log('a');
         let cashFlow = new CashFlow();
         cashFlow.walletId = req.params.walletId;
         cashFlow.amount = req.body.amount;
