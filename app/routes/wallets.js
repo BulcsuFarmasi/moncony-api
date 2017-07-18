@@ -9,7 +9,10 @@ router.route('/')
         wallet.currentAmount = req.body.currentAmount;
 
         wallet.save((err) => {
-            res.send(err);
+            if (err) {
+                res.send(err);
+            }
+            res.json(wallet);
         })
     })
     .get((req, res) => {
