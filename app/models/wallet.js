@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const WalletSchema = new Schema({
     name: String,
-    currentAmount: Number
+    amount: Number
 });
 
 WalletSchema.set('toJSON', {

@@ -6,7 +6,7 @@ router.route('/')
     .post((req, res) => {
         let wallet = new Wallet();
         wallet.name = req.body.name;
-        wallet.currentAmount = req.body.currentAmount;
+        wallet.amount = req.body.amount;
 
         wallet.save((err) => {
             if (err) {
@@ -39,11 +39,13 @@ router.route('/:id')
                 res.send(err);
             }
             wallet.name = req.body.name;
-            console.log(req.body.amount);
-            wallet.currentAmount = wallet.currentAmount + req.body.amount;
+            wallet.amount = wallet.amount + req.body.amount;
 
             wallet.save((err) => {
-                res.send(err);
+                if (err) {
+                    res.send(err);
+                }
+                res.json(wallet);
             })
         })
     })
@@ -54,6 +56,7 @@ router.route('/:id')
             if (err) {
                 res.send(err);
             }
+            res.json(wallet);
         })
     })
 
