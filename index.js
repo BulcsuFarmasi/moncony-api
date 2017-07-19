@@ -21,7 +21,7 @@ app.use(function (req, res, next) {
 
 
 app.use('/api/wallets', walletsRoutes);
-app.use('/api/cashFlows', cashFlowRoutes);
+app.use('/api/cash-flows', cashFlowRoutes);
 
 app.listen(port);
 console.log(`It works on port ${port}`);
