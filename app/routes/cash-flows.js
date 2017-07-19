@@ -8,19 +8,18 @@ router.route('/:walletId')
         cashFlow.walletId = req.params.walletId;
         cashFlow.amount = req.body.amount;
         cashFlow.text = req.body.text;
-        cashFlow.date = new Date();
-        console.log(cashFlow);
+        cashFlow.date = req.body.date;
 
         cashFlow.save((err) => {
             res.send(err);
         })
     })
     .get((req, res) => {
-        CashFlow.find({walletId:req.params.walletId}, (err, wallets) => {
+        CashFlow.find({walletId:req.params.walletId}, (err, cashFlows) => {
             if (err) {
                 res.send(err);
             }
-            res.json(wallets)
+            res.json(cashFlows)
         })
     })
 router.route('/:id')
@@ -44,6 +43,7 @@ router.route('/:id')
             if (err) {
                 res.send(err);
             }
+            res.send(cashFlow)
         })
     })
 module.exports = router;
