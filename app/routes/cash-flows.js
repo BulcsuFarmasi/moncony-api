@@ -11,7 +11,10 @@ router.route('/:walletId')
         cashFlow.date = req.body.date;
 
         cashFlow.save((err) => {
-            res.send(err);
+            if (err) {
+                res.send(err);
+            }
+            res.json(cashFlow)
         })
     })
     .get((req, res) => {
@@ -32,7 +35,10 @@ router.route('/:id')
             cashFlow.text = req.body.text;
 
             cashFlow.save((err) => {
-                res.send(err);
+                if (err) {
+                    res.send(err);
+                }
+                res.json(cashFlow);
             })
         })
     })
