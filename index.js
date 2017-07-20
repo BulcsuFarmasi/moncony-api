@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/wallets');
+mongoose.connect('mongodb://heroku_rs0q70x0:f26655akin66bbd03rigf5b07@ds115573.mlab.com:15573/heroku_rs0q70x0');
 
 const walletsRoutes = require('./app/routes/wallets');
 const cashFlowRoutes = require('./app/routes/cash-flows');
