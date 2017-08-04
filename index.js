@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 const port = process.env.PORT || 8080;
 
 app.use((req, res, next) => {
-    mongoose.connect('mongodb://heroku_rs0q70x0:f26655akin66bbd03rigf5b07@ds115573.mlab.com:15573/heroku_rs0q70x0', (err) => {
+    mongoose.connect('mongodb://heroku_6lz4v5qs:d*vPg9cHwwQNT7FXpDq#@ds143542.mlab.com:43542/heroku_6lz4v5qs', (err) => {
         if (err) {
             res.status(500).send({errorMessage: 'Cannot connect to database', error: err});
         }
