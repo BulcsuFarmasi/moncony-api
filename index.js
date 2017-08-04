@@ -12,12 +12,11 @@ app.use(bodyParser.json());
 const port = process.env.PORT || 8080;
 
 app.use((req, res, next) => {
-    mongoose.connect(process.env.MONGODB_URI)
-    mongoose.connection.on('connected',() => {
+    mongoose.connect(process.env.MONGODB_URI, (error) => {
+        if (error) {
+            res.status(500).send({errorMessage: 'Cannot connect to database', error});
+        }
         next();
-    })
-    mongoose.connection.on('error',(error) => {
-        res.status(500).send({errorMessage:'Cannot connect to database', error});
     })
 });
 
