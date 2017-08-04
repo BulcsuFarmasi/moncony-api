@@ -16,7 +16,7 @@ app.use((req, res, next) => {
     mongoose.connection.on('connected',() => {
         next();
     })
-    mongoose.connection.on('connected',(error) => {
+    mongoose.connection.on('error',(error) => {
         res.status(500).send({errorMessage:'Cannot connect to database', error});
     })
 });
