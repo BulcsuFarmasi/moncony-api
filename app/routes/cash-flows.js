@@ -20,7 +20,7 @@ router.route('/:walletId')
     .get((req, res) => {
         CashFlow.find({walletId:req.params.walletId}, (err, cashFlows) => {
             if (err) {
-                res.send(err);
+                res.status(404).send({errorMessage: 'Cannot find wallets', error: err});
             }
             res.json(cashFlows)
         })

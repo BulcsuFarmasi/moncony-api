@@ -18,7 +18,7 @@ router.route('/')
     .get((req, res) => {
         Wallet.find((err, wallets) => {
             if (err) {
-                res.status(404).send({error: 'Cannot find wallets'});
+                res.status(404).send({errorMessage: 'Cannot find wallets', error: err});
             }
             res.json(wallets)
         })
