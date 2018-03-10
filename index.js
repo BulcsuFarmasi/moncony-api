@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+const usersRoutes = require('./app/routes/users');
 const walletsRoutes = require('./app/routes/wallets');
 const cashFlowRoutes = require('./app/routes/cash-flows');
 
@@ -22,7 +23,7 @@ app.use((req, res, next) => {
     next();
 });
 
-
+app.use('/api/users', usersRoutes);
 app.use('/api/wallets', walletsRoutes);
 app.use('/api/cash-flows', cashFlowRoutes);
 
