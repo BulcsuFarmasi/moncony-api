@@ -1,18 +1,17 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const WalletSchema = new Schema({
+const UserSchema = new Schema({
     id: Schema.Types.ObjectId,
-    userId: Schema.Types.ObjectId,
     name: String,
-    amount: Number
-});
+    email: String,
+    password: String,
+    role: String
+})
 
-WalletSchema.set('toJSON', {
+CashFlowSchema.set('toJSON', {
     versionKey: false,
     transform:(doc, ret) => {ret.id = doc._id; delete ret._id}
 })
 
-module.exports = mongoose.model('Wallet', WalletSchema);
-
-
+module.exports = mongoose.model('User', UserSchema);
