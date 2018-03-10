@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const CashFlowSchema = new Schema({
-    walletId: Schema.ObjectId,
+    id: Schema.Types.ObjectId,
+    walletId: Schema.Types.ObjectId,
     amount: Number,
     text: String,
     date: Date
