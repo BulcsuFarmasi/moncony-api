@@ -9,7 +9,7 @@ const UserSchema = new Schema({
     role: String
 })
 
-CashFlowSchema.set('toJSON', {
+UserSchema.set('toJSON', {
     versionKey: false,
     transform:(doc, ret) => {ret.id = doc._id; delete ret._id}
 })

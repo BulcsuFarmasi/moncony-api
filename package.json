@@ -4,7 +4,7 @@
   "description": "API for Wallets",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "author": "Bulcsú Farmasi",
   "license": "ISC",
@@ -13,5 +13,8 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "mongoose": "^4.11.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.1"
   }
 }
