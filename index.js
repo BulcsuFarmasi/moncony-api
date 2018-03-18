@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 const port = process.env.PORT || 8080;
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://heroku_fbz07mc1:752685tkfBMY25@ds055832.mlab.com:55832/heroku_fbz07mc1', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://heroku_fbz07mc1:v3kmd3gfktsajir13p96vn2rt5@ds055832.mlab.com:55832/heroku_fbz07mc1', {
     useMongoClient: true
 });
 
